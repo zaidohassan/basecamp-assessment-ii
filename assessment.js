@@ -5,7 +5,12 @@
  * Assign the keys the appropriate values.
  */
 
-// CODE HERE
+var me = 
+
+{
+age: "24",
+firstname: "Zaid",
+state: "TX"};
 
 /**
  * #2
@@ -14,7 +19,7 @@
  * The new key should be 'faveColor'. Set it to your favorite color as a string.
  */
 
-// CODE HERE
+me.faveColor = "Blue";
 
 /**
  * #3
@@ -29,7 +34,8 @@ var message = {
   userName: me.firstname
 };
 // DON'T TOUCH THE CODE ABOVE
-// CODE HERE
+
+message["text"] = "hello";
 
 /**
  * #4
@@ -38,8 +44,17 @@ var message = {
  * upVote() should take in a number, add one to it, and return the number.
  * downVote() should take in a number, subtract one from it, and return the number.
  */
+adjustCount = {
+  upVote : function(number) {
+      number++
+      return number
+  },
+  downVote : function(number) {
+    number--
+    return number
+}
+}
 
-// CODE HERE
 
 /**
  * #5
@@ -47,7 +62,7 @@ var message = {
  * Create an array called 'myFriends' with four of your friends names.
  */
 
-// CODE HERE
+var myFriends = ["Moe", "Tareq", "Ameer", "Fursan"];
 
 /**
  * #6
@@ -55,7 +70,7 @@ var message = {
  * Add a fifth friends name to the end of your 'myFriends' array.
  */
 
-// CODE HERE
+myFriends.push("Ibi");
 
 /**
  * #7
@@ -66,8 +81,8 @@ var message = {
 
 // DON'T TOUCH THE CODE BELOW
 var myArray = [1, 2, 3, 4];
-// DON'T TOUCH THE CODE ABOVE
-// CODE HERE
+
+var myArrayCopy= myArray.slice()
 
 /**
  * #8
@@ -80,9 +95,15 @@ var myArray = [1, 2, 3, 4];
 var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
 //DON'T TOUCH THE CODE ABOVE
 function evensOnly() {
-  // CODE HERE
+  var evensArray = [];
+  for(i = 0; i < myNumbers.length; i++) {
+     if ((myNumbers[i] % 2) === 0) {
+        evensArray.push(myNumbers[i]);
+    }
+  }
+  return evensArray;
 }
-
+evensOnly();
 /**
  * #9
  *
@@ -90,7 +111,7 @@ function evensOnly() {
  * Assign it to a variable called 'trueFriends'.
  */
 
-// CODE HERE
+
 var peopleIknow = [
   { name: "Steve", friend: true },
   { name: "Dan", friend: false },
@@ -99,6 +120,18 @@ var peopleIknow = [
   { name: "Michelle", friend: false },
   { name: "Holly", friend: true }
 ];
+
+
+var trueFriends = peopleIknow.filter(function(notFake) 
+{
+  if (notFake.friend === true) {
+    return notFake
+    
+    }
+
+});
+
+console.log(trueFriends);
 
 /**
  * #10
@@ -110,3 +143,15 @@ var peopleIknow = [
  */
 
 let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
+
+var indexes = [];
+
+function indexFinder(arr) {
+    for (i= 0; i < arr.length; i++) {
+       indexes.push(i); 
+      }
+      return indexes;
+}
+indexFinder(randomNumbers);
+console.log(indexes);
+
